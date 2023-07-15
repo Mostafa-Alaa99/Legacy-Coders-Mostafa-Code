@@ -1,0 +1,27 @@
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def middleNode(linkedList):
+    curNodeIdx = 0
+    targetNodeIdx = linkedListLength(linkedList) // 2
+    itr = linkedList
+    while itr:
+        if curNodeIdx == targetNodeIdx:
+            return itr
+
+        itr = itr.next
+        curNodeIdx += 1
+
+    return None
+
+def linkedListLength(linkedList):
+    itr = linkedList
+    length = 0
+    while itr:
+        itr = itr.next
+        length += 1
+
+    return length
